@@ -6,6 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 import RecipesList from './RecipesList.js'
+import RecipesNew from './RecipesNew.js'
 
 class NavBar extends Component {
   render() {
@@ -40,9 +41,6 @@ class NavBar extends Component {
 
 function About() {
   return <h2>About</h2>;
-}
-function RecipesNew() {
-  return <h2>New Recipe</h2>;
 }
 
 export default NavBar;
