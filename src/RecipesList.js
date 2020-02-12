@@ -14,19 +14,19 @@ class RecipesList extends Component {
 
     if (response.ok) {
       let recipes = await response.json();
-      console.log(recipes);
       this.setState({ recipes: recipes});
     }
   }
 
   render() {
     const recipes_html = this.state.recipes.map(recipe =>
+      <div key={recipe.id}>
         <Recipe
-          id={recipe.id}
           name={recipe.name}
           description={recipe.description}
           ingredients={recipe.ingredients}
         />
+      </div>
       );
     return (
       <div>
