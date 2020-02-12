@@ -30,7 +30,7 @@ class RecipesList extends Component {
       );
     return (
       <div>
-        <h1>All Recipes</h1>
+        <h1 className="baskerville fw1 ph3 ph0-l m2">All Recipes</h1>
         <div>
           {recipes_html}
         </div>

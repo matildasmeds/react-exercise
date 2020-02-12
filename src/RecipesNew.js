@@ -26,19 +26,25 @@ class RecipesNew extends Component {
 
   // TODO: Make responsive if there is time
   render() {
-    return <div>
-      <h2>New Recipe</h2>
-      <div>Name:
+    return <div className="pa4 black-80">
+      <h1 class="baskerville fw1 ph3 ph0-l">New recipe</h1>
+      <div>
+        <label className="db fw4 lh-copy f6" for='name'>Name</label>
         <input type='text'
+              name='name'
                onChange={e => this.setState({name: e.target.value})}>
         </input>
       </div>
-      <div>Description:
+      <div className='mt3'>
+        <label className="db fw4 lh-copy f6" for='description'>Description</label>
         <input type='text'
                onChange={e => this.setState({description: e.target.value})}>
         </input></div>
-      <div>TODO: Add ingredients, either + button for ndaadding next one, or comma separated</div>
-      <div><button onClick={this.saveRecipe}>Submit</button></div>
+      <div className='mt3'>TODO: Add ingredients, either + button for ndaadding next one, or comma separated</div>
+      <div className='mt3'>
+        <button className='b ph3 pv2 input-reset ba b--black bg-transparent hover-white hover-bg-blue pointer f6'
+          onClick={this.saveRecipe}>Submit</button>
+      </div>
     </div>;
   }
 }

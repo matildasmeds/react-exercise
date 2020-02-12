@@ -27,12 +27,13 @@ class NavBar extends Component {
             </ul>
           </nav>
 
-          <Switch>
-            <Route path='/recipes/new'><RecipesNew /></Route>
-            <Route path='/recipes'><RecipesList /></Route>
-            <Route path='/'><About /></Route>
-          </Switch>
-
+          <section className="mw7 center avenir">
+            <Switch>
+              <Route path='/recipes/new'><RecipesNew /></Route>
+              <Route path='/recipes'><RecipesList /></Route>
+              <Route path='/'><About /></Route>
+            </Switch>
+          </section>
         </div>
       </Router>
     )
@@ -40,7 +41,7 @@ class NavBar extends Component {
 }
 
 function About() {
-  return <h2>About</h2>;
+  return <h1 className="baskerville fw1 ph3 ph0-l">About...</h1>;
 }
 
 export default NavBar;
