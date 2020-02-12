@@ -29,7 +29,7 @@ class RecipesList extends Component {
       </div>
       );
     return ( <div className="pa4 black-80">
-        <h1 class="baskerville fw1 ph3 ph0-l bb b--black-10">All recipes</h1>
+        <h1 className="baskerville fw1 ph3 ph0-l bb b--black-10">All recipes</h1>
         {recipes_html}
       </div>
     )
