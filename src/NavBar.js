@@ -13,20 +13,10 @@ class NavBar extends Component {
     return (
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">About</Link>
-              </li>
-              <li>
-                <Link to="/recipes">Recipes</Link>
-              </li>
-              <li>
-                <Link to="/recipes/new">New Recipe</Link>
-              </li>
-            </ul>
+          <nav className="pa3 pa4-ns mw7 center avenir">
+            <a className="link dim black f6 pr3 f5-ns dib mr3" href="/recipes" title="Recipes">Recipes</a>
+            <a className="link dim black f6 pr3 f5-ns dib mr3" href="/recipes/new" title="New">New Recipe</a>
           </nav>
-
           <section className="mw7 center avenir">
             <Switch>
               <Route path='/recipes/new'><RecipesNew /></Route>

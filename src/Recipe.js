@@ -6,9 +6,9 @@ function Recipe(props) {
         <Ingredient name={ingredient.name} />
       </div>
     );
-  return <section className="bb b--black-10 ma3">
-    <div className="w-100 w-60-ns pl3-ns">
-      <h3 className="f3 fwl baskerville mt0 lh-title">{props.name}</h3>
+  return <section className="bb b--black-10">
+    <div className="w-100 mt4 mb5">
+      <h3 className="f4 fwl baskerville mt0 lh-title">{props.name}</h3>
       <p>{props.description}</p>
       <div>{ingredients_html}</div>
     </div>
