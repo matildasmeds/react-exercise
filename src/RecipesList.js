@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Recipe from './Recipe.js';
 
 class RecipesList extends Component {
   constructor(props) {
@@ -20,7 +21,12 @@ class RecipesList extends Component {
 
   render() {
     const recipes_html = this.state.recipes.map(recipe =>
-        <div key={recipe.id}>{recipe.name}</div>
+        <Recipe
+          id={recipe.id}
+          name={recipe.name}
+          description={recipe.description}
+          ingredients={recipe.ingredients}
+        />
       );
     return (
       <div>
