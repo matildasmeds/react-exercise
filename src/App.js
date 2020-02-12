@@ -4,10 +4,7 @@ import NavBar from './NavBar.js';
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <div>something something</div>
-    </div>
+    <NavBar />
   );
 }
 

@@ -5,13 +5,9 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-
+import RecipesList from './RecipesList.js'
 
 class NavBar extends Component {
-  navigate() {
-    console.log('Navigate');
-  }
-
   render() {
     return (
       <Router>
@@ -31,8 +27,8 @@ class NavBar extends Component {
           </nav>
 
           <Switch>
-          <Route path='/recipes/new'><RecipesNew /></Route>
-          <Route path='/recipes'><RecipesList /></Route>
+            <Route path='/recipes/new'><RecipesNew /></Route>
+            <Route path='/recipes'><RecipesList /></Route>
             <Route path='/'><About /></Route>
           </Switch>
 
@@ -44,9 +40,6 @@ class NavBar extends Component {
 
 function About() {
   return <h2>About</h2>;
-}
-function RecipesList() {
-  return <h2>All Recipes</h2>;
 }
 function RecipesNew() {
   return <h2>New Recipe</h2>;
