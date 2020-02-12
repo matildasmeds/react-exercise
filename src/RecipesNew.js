@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from './Button.js';
 
 class RecipesNew extends Component {
   constructor(props) {
@@ -42,8 +43,7 @@ class RecipesNew extends Component {
         </input></div>
       <div className='mt3'>TODO: Add ingredients, either + button for ndaadding next one, or comma separated</div>
       <div className='mt3'>
-        <button className='b ph3 pv2 input-reset ba b--black bg-transparent hover-white hover-bg-blue pointer f6'
-          onClick={this.saveRecipe}>Submit</button>
+        <Button label='Submit' onClick={this.saveRecipe}/>
       </div>
     </div>;
   }
