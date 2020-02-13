@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Input, H1, Alert } from './BasicComponents.js'
+import Requests from './Requests.js';
 
 function RecipesNew() {
   const [name, setName] = useState('');
@@ -18,22 +19,13 @@ function RecipesNew() {
   }
 
   const saveRecipe = () => {
-    const url = 'http://localhost:8000/api/recipe/';
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(getPayload())
-    }).then(response => {
-      if (response.ok) {
+    Requests.saveRecipe(getPayload())
+    .then(response => {
+      if (response.status === 201) {
         setAlert({message: 'New recipe created!', status: 'success'});
       } else {
-        response.json().then(json => {
-            const message = `${response.statusText} : ${JSON.stringify(json)}`;
-            setAlert({message: message, status: 'error'});
-          }
-        );
+        const message = `${response.statusText} : ${JSON.stringify(response.data)}`;
+        setAlert({message: message, status: 'error'});
       }
     }, error => {
       setAlert({message: error.message, status: 'error'});
