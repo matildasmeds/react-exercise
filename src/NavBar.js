@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 import RecipesList from './RecipesList.js'
 import RecipesNew from './RecipesNew.js'
