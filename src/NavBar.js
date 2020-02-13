@@ -10,21 +10,21 @@ import { NavLink } from './BasicComponents.js';
 
 function NavBar() {
   return (
-    <Router>
-      <div>
-        <nav className="pa3 pa4-ns mw7 center avenir">
-          <NavLink path='/recipes' label='Recipes' />
-          <NavLink path='/recipes/new' label='New Recipe' />
-       </nav>
-        <section className="mw7 center avenir">
+    <div>
+      <nav className="pa3 pa4-ns mw7 center avenir">
+        <NavLink path='/recipes' label='Recipes' />
+        <NavLink path='/recipes/new' label='New Recipe' />
+      </nav>
+      <section className="mw7 center avenir">
+        <Router>
           <Switch>
             <Route path='/recipes/new'><RecipesNew /></Route>
             <Route path='/recipes'><RecipesList /></Route>
             <Route path='/'><About /></Route>
           </Switch>
-        </section>
-      </div>
-    </Router>
+        </Router>
+      </section>
+    </div>
   )
 };
 
