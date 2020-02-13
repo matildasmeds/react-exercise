@@ -1,7 +1,7 @@
-import '@testing-library/jest-dom/extend-expect';
-
 import React from 'react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import '@testing-library/jest-dom/extend-expect';
 import RecipesList from './RecipesList.js';
 
 test('renders the list correctly', () => {
@@ -23,4 +23,6 @@ test('renders the list correctly', () => {
     expect(html).not.toBeNull();
     expect(html).toMatchSnapshot();
   });
+  const recipesListTree = renderer.create(<RecipesList recipes={recipes} />).toJSON();
+  expect(recipesListTree).toMatchSnapshot();
  });

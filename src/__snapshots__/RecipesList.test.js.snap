@@ -19,3 +19,42 @@ exports[`renders the list correctly 3`] = `
   Secret ingredient
 </div>
 `;
+
+exports[`renders the list correctly 4`] = `
+<div
+  className="pa4 black-80"
+>
+  <h1
+    className="baskerville fw1 ph3 ph0-l bb b--black-10 mb2 pb1"
+  >
+    All recipes
+  </h1>
+  <div
+    id="recipe-1"
+  >
+    <section
+      className="bb b--black-10"
+    >
+      <div
+        className="w-100 mt4 mb4"
+      >
+        <h3
+          className="f4 fwl baskerville mt0 lh-title"
+        >
+          My favorite recipe
+        </h3>
+        <p>
+          Easy, healthy, cheap, delicious
+        </p>
+        <div>
+          <div>
+            <div>
+              Secret ingredient
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;

@@ -5,7 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import RecipesList from './RecipesList.js';
-import RecipesNew from './RecipesNew.js';
+import RecipesForm from './RecipesForm.js';
 import { NavLink } from './BasicComponents.js';
 import Requests from './Requests.js'
 
@@ -28,7 +28,7 @@ function NavBar() {
       <section className="mw7 center avenir">
         <Router>
           <Switch>
-            <Route path='/recipes/new'><RecipesNew /></Route>
+            <Route path='/recipes/new'><RecipesForm form_heading='New Recipe' form_type='edit' /></Route>
             <Route path='/recipes'><RecipesList recipes={recipes}/></Route>
             <Route path='/'><About /></Route>
           </Switch>
