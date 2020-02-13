@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from './Button.js';
 import Input from './Input.js';
+import H1 from './H1.js';
 
 function RecipesNew() {
   const [name, setName] = useState('');
@@ -30,7 +31,7 @@ function RecipesNew() {
   }
 
   return <div className="pa4 black-80">
-    <h1 className="baskerville fw1 ph3 ph0-l">New recipe</h1>
+    <H1 label='New Recipe' />
     <Input name='name' type='text' label='Name' callBack={setName} />
     <Input name='description' type='text' label='Description' callBack={setDescription} />
     <Input name='ingredients' type='text' label='Ingredients (comma separated list)' callBack={setIngredients} />
