@@ -10,7 +10,7 @@ function RecipesList() {
     axios(url).then(result => {
       setRecipes(result.data);
     });
-  });
+  }, []);
 
   console.log(recipes);
 
