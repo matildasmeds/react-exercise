@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from './Button.js';
+import Input from './Input.js';
 
 function RecipesNew() {
   const [name, setName] = useState('');
@@ -30,25 +31,9 @@ function RecipesNew() {
 
   return <div className="pa4 black-80">
     <h1 className="baskerville fw1 ph3 ph0-l">New recipe</h1>
-    <div>
-      <label className="db fw4 lh-copy f6" htmlFor='name'>Name</label>
-      <input type='text'
-             name='name'
-             onChange={e => setName(e.target.value)}>
-      </input>
-    </div>
-    <div className='mt3'>
-      <label className="db fw4 lh-copy f6" htmlFor='description'>Description</label>
-      <input type='text'
-             onChange={e => setDescription(e.target.value)}>
-      </input>
-    </div>
-    <div className='mt3'>
-    <label className="db fw4 lh-copy f6" htmlFor='ingredients'>Ingredients (comma separated!)</label>
-    <input type='text'
-           onChange={e => setIngredients(e.target.value)}>
-    </input>
-    </div>
+    <Input name='name' type='text' label='Name' callBack={setName} />
+    <Input name='description' type='text' label='Description' callBack={setDescription} />
+    <Input name='ingredients' type='text' label='Ingredients (comma separated list)' callBack={setIngredients} />
     <div className='mt3'>
       <Button label='Submit' callBack={saveRecipe}/>
     </div>
