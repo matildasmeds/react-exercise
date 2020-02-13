@@ -1,0 +1,35 @@
+import React from 'react';
+
+function H1(props) {
+  return <h1
+    className="baskerville fw1 ph3 ph0-l">
+    {props.label}
+  </h1>
+}
+
+function Button(props) {
+  return <button className='b ph3 pv2 mv3 input-reset ba b--black bg-transparent hover-white hover-bg-blue pointer f6'
+      onClick={props.callBack}
+    >
+    {props.label}
+  </button>
+}
+
+function Input(props) {
+  return <div className='mv3'>
+    <label className="db fw4 lh-copy f6" htmlFor={props.name}>{props.label}</label>
+    <input type={props.type}
+           name={props.name}
+           onChange={e => props.callBack(e.target.value)}>
+    </input>
+  </div>;
+}
+
+function NavLink(props) {
+  return <a className="link dim black f6 pr3 f5-ns dib mr3"
+            href={props.path} title={props.label}>
+    {props.label}
+  </a>;
+}
+
+export { H1, Input, Button, NavLink };

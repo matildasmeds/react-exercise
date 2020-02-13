@@ -4,15 +4,9 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import RecipesList from './RecipesList.js'
-import RecipesNew from './RecipesNew.js'
-
-function NavLink(props) {
-  return <a className="link dim black f6 pr3 f5-ns dib mr3"
-            href={props.path} title={props.label}>
-    {props.label}
-  </a>;
-}
+import RecipesList from './RecipesList.js';
+import RecipesNew from './RecipesNew.js';
+import { NavLink } from './BasicComponents.js';
 
 function NavBar() {
   return (

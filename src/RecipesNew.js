@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Button from './Button.js';
-import Input from './Input.js';
-import H1 from './H1.js';
+import { Button, Input, H1 } from './BasicComponents.js'
 
 function RecipesNew() {
   const [name, setName] = useState('');

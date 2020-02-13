@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Recipe from './Recipe.js';
+import { H1 } from './BasicComponents.js';
 import axios from 'axios';
 
 function RecipesList() {
@@ -15,7 +16,7 @@ function RecipesList() {
   console.log(recipes);
 
   return <div className="pa4 black-80">
-      <h1 className="baskerville fw1 ph3 ph0-l bb b--black-10">All recipes</h1>
+      <H1 label='All recipes' />
       { recipes && recipes.map(recipe =>
         <div key={recipe.id}>
           <Recipe
