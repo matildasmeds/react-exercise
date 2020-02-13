@@ -44,9 +44,9 @@ function RecipesForm(props) {
 
   return <div className="pa4 black-80">
     <H1 label={props.form_heading} />
-    <Input name='name' type='text' label='Name' callBack={setName} />
-    <Input name='description' type='text' label='Description' callBack={setDescription} />
-    <Input name='ingredients' type='text' label='Ingredients (comma separated list)' callBack={setIngredients} />
+    <Input name='name' type='text' label='Name' callBack={setName} value={props.name} />
+    <Input name='description' type='text' label='Description' value={props.description} callBack={setDescription} />
+    <Input name='ingredients' type='text' label='Ingredients (comma separated list)' value='TODO: Create comma separated list' callBack={setIngredients} />
     <div className='mv3'>
       <Button label='Submit' callBack={saveRecipe}/>
     </div>
