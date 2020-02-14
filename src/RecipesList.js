@@ -10,6 +10,7 @@ function RecipesList(props) {
   useEffect(() => {
     const params = searchTerm ? '?name=' + searchTerm : '';
     Requests.fetchRecipes(params).then(result => {
+      console.log(result);
       setRecipes(result.data);
     });
   }, [searchTerm]);
