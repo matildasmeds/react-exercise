@@ -17,6 +17,9 @@ const Requests = {
   },
   fetchRecipe: (id) => {
     return axios('/api/recipe/' + id + '/');
+  },
+  deleteRecipe: (id) => {
+    return axios.delete('/api/recipe/' + id + '/');
   }
 }
 
