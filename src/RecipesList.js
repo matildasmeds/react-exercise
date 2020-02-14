@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Recipe from './Recipe.js';
-import { H1 } from './BasicComponents.js';
+import { H1, Button } from './BasicComponents.js';
 
 function RecipesList(props) {
   return <div className="pa4 black-80">
@@ -14,6 +14,7 @@ function RecipesList(props) {
             ingredients={recipe.ingredients}
           />
          </div>)}
+      <a href='/recipes/new'><Button label='New' /></a>
     </div>;
 };
 

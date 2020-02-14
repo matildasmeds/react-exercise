@@ -8,8 +8,10 @@ function H1(props) {
 }
 
 function Button(props) {
-  return <button className='b ph3 pv2 mv3 input-reset ba b--black bg-transparent hover-white hover-bg-blue pointer f6'
-      onClick={props.callBack}
+  const doNothing = () => {};
+  const callBack = props.callBack || doNothing;
+  return <button className='b ph3 pv2 mv3 mr1 input-reset ba b--black bg-transparent hover-white hover-bg-blue pointer f6'
+      onClick={callBack}
     >
     {props.label}
   </button>
