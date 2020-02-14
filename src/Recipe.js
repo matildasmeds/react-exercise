@@ -16,18 +16,17 @@ function Recipe(props) {
       if (response.status === 204) {
         setIsDeleted(true);
       }
-      console.log(response);
     }, error => {
       console.log(error);
     });
   }
 
-  const recipeHtml = <div className="w-100 mh4">
+  const recipeHtml = <div className="w-100 mv4">
     <h3 className="f4 fwl baskerville mt0 lh-title">{props.name}</h3>
     <p>{props.description}</p>
     <div>{ingredients_html}</div>
     <div className="mt3">
-      <a href={'/recipes/' + props.id + '/edit' }>Edit recipe</a>
+      <a href={'/recipes/' + props.id + '/edit' }><Button label='Edit' callBack={() => {}}></Button></a>
       <Button label='Delete' callBack={deleteRecipe} />
     </div>
   </div>
