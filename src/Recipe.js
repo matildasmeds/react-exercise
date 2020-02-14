@@ -27,7 +27,7 @@ function Recipe(props) {
     <div>{ingredients_html}</div>
     <div className="mt3">
       <a href={'/recipes/' + props.id + '/edit' }><Button label='Edit' /></a>
-      <Button label='Delete' callBack={deleteRecipe} />
+      <Button label='Delete' callBack={deleteRecipe} bgcolor='#ffaaa5' />
     </div>
   </div>
 

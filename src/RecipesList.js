@@ -27,7 +27,7 @@ function RecipesList(props) {
             ingredients={recipe.ingredients}
           />
          </div>) }
-      <a href='/recipes/new'><Button label='New' /></a>
+      <a href='/recipes/new'><Button label='New' bgcolor='#a8e6cf' /></a>
     </div>;
 };
 
