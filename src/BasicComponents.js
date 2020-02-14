@@ -10,7 +10,7 @@ function H1(props) {
 function Button(props) {
   const doNothing = () => {};
   const callBack = props.callBack || doNothing;
-  return <button className='b ph3 pv2 mv3 mr1 input-reset ba b--black bg-transparent hover-white hover-bg-blue pointer f6'
+  return <button className='ph3 pv2 mt2 mr2 input-reset ba b--black-25 bg-transparent hover-white hover-bg-blue pointer f6'
       onClick={callBack}
     >
     {props.label}

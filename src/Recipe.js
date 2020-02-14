@@ -21,7 +21,7 @@ function Recipe(props) {
     });
   }
 
-  const recipeHtml = <div className="w-100 mv3">
+  const recipeHtml = <div className="w-100 mv2">
     <h3 className="f4 fwl baskerville mt0 lh-title">{props.name}</h3>
     <p>{props.description}</p>
     <div>{ingredients_html}</div>
@@ -31,7 +31,7 @@ function Recipe(props) {
     </div>
   </div>
 
-  const deletedHtml = <div className="w-100 mv3">
+  const deletedHtml = <div className="w-100 mv2">
     <i>Deleted recipe...</i>
   </div>
 
