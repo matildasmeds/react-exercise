@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Button, Input, H1, Alert } from './BasicComponents.js'
+import { Button, Input, H1, Alert, NavLink } from './BasicComponents.js'
 import Requests from './Requests.js';
 
 function RecipesForm(props) {
@@ -71,9 +71,10 @@ function RecipesForm(props) {
     <Input name='name' type='text' label='Name' value={name} callBack={setName} />
     <Input name='description' type='text' label='Description' value={description} callBack={setDescription} />
     <Input name='ingredients' type='text' label='Ingredients (comma separated list)' value={ingredients} callBack={setIngredients} />
-    <div className='mv3'>
+    <div className='mt3 mb5'>
       <Button label='Submit' callBack={saveRecipe}/>
     </div>
+    <NavLink label='See all recipes' path='/' />
     <Alert alert={alert} />
   </div>;
 }
