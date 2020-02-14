@@ -11,6 +11,9 @@ function Recipe(props) {
       <h3 className="f4 fwl baskerville mt0 lh-title">{props.name}</h3>
       <p>{props.description}</p>
       <div>{ingredients_html}</div>
+      <div className="mt3">
+        <a href={'/recipes/' + props.id + '/edit' }>Edit recipe</a>
+      </div>
     </div>
   </section>;
 }

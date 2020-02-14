@@ -13,7 +13,6 @@ function NavBar() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    console.log(Requests.fetchRecipes);
     Requests.fetchRecipes().then(result => {
       setRecipes(result.data);
     });
@@ -28,7 +27,8 @@ function NavBar() {
       <section className="mw7 center avenir">
         <Router>
           <Switch>
-            <Route path='/recipes/new'><RecipesForm form_heading='New Recipe' form_type='edit' /></Route>
+            <Route path='/recipes/new'><RecipesForm form_heading='New Recipe' form_type='new' /></Route>
+            <Route path='/recipes/:id/edit'><RecipesForm form_heading='Edit Recipe' form_type='edit' /></Route>
             <Route path='/recipes'><RecipesList recipes={recipes}/></Route>
             <Route path='/'><About /></Route>
           </Switch>
