@@ -19,19 +19,19 @@ describe('<RecipesList />', () => {
     }]
   }];
 
-  it('Renders correctly', () => {
+  const testStringExists = (str) => {
+    expect(str).not.toBeNull();
+    expect(str).toMatchSnapshot();
+  }
+
+  it('Renders correctly', async () => {
     Requests.fetchRecipes = axios.get.mockResolvedValue({ status: 200, data: recipes });
     const { getByText } = render(<RecipesList />);
-    [
-      'My favorite recipe',
-      'Easy, healthy, cheap, delicious',
-      'Secret ingredient'
-    ].forEach((str) => {
-      const html = getByText(str);
-      expect(html).not.toBeNull();
-      expect(html).toMatchSnapshot();
-    });
-    const recipesListTree = renderer.create(<RecipesList recipes={recipes} />).toJSON();
-    expect(recipesListTree).toMatchSnapshot();
+    let str = await waitForElement(() => getByText('My favorite recipe'));
+    testStringExists(str);
+    str = await waitForElement(() => getByText('Easy, healthy, cheap, delicious'));
+    testStringExists(str);
+    str = await waitForElement(() => getByText('Secret ingredient'));
+    testStringExists(str);
   });
  });
