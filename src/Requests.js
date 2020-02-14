@@ -4,8 +4,8 @@ axios.defaults.baseURL = 'http://localhost:8000';
 axios.defaults.headers['Content-Type'] = 'application/json';
 
 const Requests = {
-  fetchRecipes: () => {
-    return axios('/api/recipe/');
+  fetchRecipes: (searchParams) => {
+    return axios('/api/recipe/' + searchParams);
   },
   createRecipe: (payload) => {
     return axios.post('/api/recipe/', payload);

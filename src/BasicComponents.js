@@ -20,7 +20,8 @@ function Button(props) {
 function Input(props) {
   return <div className='mv3'>
     <label className="db fw4 lh-copy f6" htmlFor={props.name}>{props.label}</label>
-    <input type={props.type}
+    <input className="b--black-25"
+           type={props.type}
            name={props.name}
            value={props.value}
            onChange={e => props.callBack(e.target.value)}>
