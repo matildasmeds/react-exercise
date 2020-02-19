@@ -43,6 +43,7 @@ function Input(props) {
     <input className="b--black-25"
            type={props.type}
            name={props.name}
+           id={props.name}
            value={props.value}
            onChange={e => props.callBack(e.target.value)}>
     </input>
