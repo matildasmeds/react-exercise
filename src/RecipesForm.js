@@ -33,7 +33,7 @@ function RecipesForm(props) {
       name: name,
       description: description,
       ingredients: ingredients.split(',').map(ingredient => {
-        return { name: ingredient }
+        return { name: ingredient.trim() }
       })
     }
     if (id) {
