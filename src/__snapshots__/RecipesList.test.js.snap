@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RecipesList /> Renders correctly 1`] = `
+exports[`Renders list correctly 1`] = `
 <h3
   class="f4 fwl baskerville mt0 lh-title"
 >
@@ -8,13 +8,13 @@ exports[`<RecipesList /> Renders correctly 1`] = `
 </h3>
 `;
 
-exports[`<RecipesList /> Renders correctly 2`] = `
+exports[`Renders list correctly 2`] = `
 <p>
   Easy, healthy, cheap, delicious
 </p>
 `;
 
-exports[`<RecipesList /> Renders correctly 3`] = `
+exports[`Renders list correctly 3`] = `
 <div>
   Secret ingredient
 </div>
