@@ -66,3 +66,33 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Personal notes on the exercise
+
+#### Promise vs. async-await
+
+If I replace Promise syntax with async-await, updates actually happen visibly slower. Would be nice to understand why.
+
+
+RecipesList.js 
+
+```
+  // Promise syntax
+  useEffect(() => {
+    const params = searchTerm ? '?name=' + searchTerm : '';
+    Requests.fetchRecipes(params).then(result => {
+      setRecipes(result.data);
+    });
+  }, [searchTerm]);
+```
+
+```
+  // async-await syntax
+  useEffect(() => {
+    const params = searchTerm ? '?name=' + searchTerm : '';
+    (async () => {
+      const response = await Requests.fetchRecipes(params);
+      setRecipes(response.data);
+    })();
+  }, [searchTerm]);
+```
