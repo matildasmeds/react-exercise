@@ -26,16 +26,13 @@ test('Renders list correctly', async () => {
   const { getByText, getAllByRole } = render(<RecipesList />);
   expect(Requests.fetchRecipes).toHaveBeenCalledTimes(1);
 
-  // How to test that Recipe-component has rendered with correct props with React Testing Library?
-  // Why do I need waitForElement here, while in RecipesForm / Recipe tests it is not needed?
-  let str = await waitForElement(() => getByText('My favorite recipe'));
+  const str = await waitForElement(() => getByText('My favorite recipe'));
   testStringExists(str);
-  str = await waitForElement(() => getByText('Easy, healthy, cheap, delicious'));
-  testStringExists(str);
-  str = await waitForElement(() => getByText('Secret ingredient'));
-  testStringExists(str);
-  const buttons = await waitForElement(() => getAllByRole('button'));
+  testStringExists(getByText('Easy, healthy, cheap, delicious'));
+  testStringExists(getByText('Secret ingredient'));
+  const buttons = getAllByRole('button');
   expect(buttons.map((button) => { return button.innerHTML; })).toEqual(['Edit', 'Delete', 'New']);
 
-  // How to test that clicking 'New' goes to right path?
+  // To test Edit & New buttons we would need to render App component,
+  // that includes the Router
 });
