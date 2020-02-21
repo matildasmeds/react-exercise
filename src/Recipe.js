@@ -6,9 +6,7 @@ function Recipe(props) {
   const [isDeleted, setIsDeleted] = useState(false);
 
   const ingredients_html = props.ingredients.map((ingredient, index) =>
-      <div key={index}>
-        <Ingredient name={ingredient.name} />
-      </div>
+      <Ingredient name={ingredient.name} key={index} />
     );
 
   function deleteRecipe() {

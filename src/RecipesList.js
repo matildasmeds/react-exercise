@@ -19,14 +19,14 @@ function RecipesList(props) {
       <Input name='name' type='text' label='Search recipe...' callBack={setSearchTerm} />
       <H1 label='All recipes' />
       { recipes && recipes.map(recipe =>
-        <div key={recipe.id} id={'recipe-' + recipe.id}>
           <Recipe
+            key={recipe.id}
             id={recipe.id}
             name={recipe.name}
             description={recipe.description}
             ingredients={recipe.ingredients}
           />
-         </div>) }
+      )}
       <a href='/recipes/new'><Button label='New' bgcolor='#a8e6cf' /></a>
     </div>;
 };
