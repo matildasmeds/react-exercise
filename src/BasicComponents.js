@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function H1(props) {
+export function H1(props) {
   return <h1
     className="baskerville fw1 ph3 ph0-l bb b--black-10 mb2 pb1">
     {props.label}
@@ -28,16 +28,17 @@ const StyledButton = styled.button`
   }
 `
 
-function Button(props) {
-  const doNothing = () => {};
-  const callBack = props.callBack || doNothing;
+export function Button(props) {
   return <StyledButton bgcolor={props.bgcolor} color={props.color}
-      onClick={callBack}
+      onClick={props.callBack}
     >{props.label}
     </StyledButton>;
 }
+Button.defaultProps = {
+  callBack: () => {}
+};
 
-function Input(props) {
+export function Input(props) {
   return <div className='mv3'>
     <label className="db fw4 lh-copy f6" htmlFor={props.name}>{props.label}</label>
     <input className="b--black-25"
@@ -50,14 +51,14 @@ function Input(props) {
   </div>;
 }
 
-function NavLink(props) {
+export function NavLink(props) {
   return <a className="link dim black f6 pr3 f5-ns dib mr3"
             href={props.path} title={props.label}>
     {props.label}
   </a>;
 }
 
-function Alert(props) {
+export function Alert(props) {
   let className = '';
   if (props.alert.status === 'success') {
     className += 'b--green br2 pa3 ba bw1';
@@ -66,5 +67,3 @@ function Alert(props) {
   }
   return <div className={className}>{props.alert.message}</div>;
 }
-
-export { H1, Input, Button, NavLink, Alert };
