@@ -54,5 +54,5 @@ test('edit a Recipe - happy path', async () => {
   expect(Requests.updateRecipe).toHaveBeenCalledWith(updated_recipe);
 
   const message = await waitForElement(() => getByText('Recipe updated!'));
-  expect(message).not.toBeNull();
+  expect(message).toBeInTheDocument();
 });

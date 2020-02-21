@@ -42,7 +42,7 @@ test('creates a new Recipe - happy path', async () => {
   expect(Requests.createRecipe).toHaveBeenCalledWith(recipe);
 
   const message = await waitForElement(() => getByText('New recipe created!'));
-  expect(message).not.toBeNull();
+  expect(message).toBeInTheDocument();
 });
 
 test('creates a new Recipe - incomplete data', () => {});

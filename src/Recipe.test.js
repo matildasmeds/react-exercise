@@ -16,9 +16,9 @@ jest.mock('axios');
 
 test('Renders correctly', async () => {
   const { getAllByRole, getByText} = render(<Recipe {...props} />);
-  expect(getByText('Yet another recipe')).not.toBeNull();
-  expect(getByText('Simple')).not.toBeNull();
-  expect(getByText('Anything you like')).not.toBeNull();
+  expect(getByText('Yet another recipe')).toBeInTheDocument();
+  expect(getByText('Simple')).toBeInTheDocument();
+  expect(getByText('Anything you like')).toBeInTheDocument();
 
   const [editButton, deleteButton] = getAllByRole('button');
   expect(editButton.innerHTML).toEqual('Edit');
@@ -49,5 +49,5 @@ test('Can be deleted', async () => {
   expect(Requests.deleteRecipe).toHaveBeenCalledWith(5);
 
   const message = await waitForElement(() => getByText('Deleted recipe...'));
-  expect(message).not.toBeNull();
+  expect(message).toBeInTheDocument();
 });

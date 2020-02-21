@@ -17,7 +17,7 @@ const recipes = [{
 }];
 
 const testStringExists = (str) => {
-  expect(str).not.toBeNull();
+  expect(str).toBeInTheDocument();
   expect(str).toMatchSnapshot();
 }
 
