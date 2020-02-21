@@ -2,7 +2,8 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
 import RecipesList from './RecipesList.js';
 import RecipesForm from './RecipesForm.js';
@@ -15,7 +16,7 @@ function App() {
           <Switch>
             <Route path='/recipes/new'><RecipesForm form_heading='New Recipe' form_type='new' /></Route>
             <Route path='/recipes/:id/edit'><RecipesForm form_heading='Edit Recipe' form_type='edit' /></Route>
-            <Route path='/recipes'><RecipesList/></Route>
+            <Route path='/recipes'><Redirect to='/' /></Route>
             <Route path='/'><RecipesList/></Route>
           </Switch>
         </Router>
