@@ -74,7 +74,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 If I replace Promise syntax with async-await, updates actually happen visibly slower. Would be nice to understand why.
 
 
-RecipesList.js 
+RecipesList.js
 
 ```
   // Promise syntax
@@ -96,3 +96,6 @@ RecipesList.js
     })();
   }, [searchTerm]);
 ```
+
+#### To test routes, render the Router
+For instance to test that clicking Edit-button in RecipesList takes you to correct route, you would need to render App.js in the test, instead of RecipesList.js
